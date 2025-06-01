@@ -1,0 +1,9 @@
+/* src/pages/Register.css */
+.card {
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+input::placeholder {
+  color: #999;
+}

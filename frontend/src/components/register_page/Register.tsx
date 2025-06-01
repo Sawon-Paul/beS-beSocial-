@@ -2,6 +2,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./Register.css"; // Optional: custom styles
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -36,70 +37,96 @@ const Register = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-3xl font-semibold">Register</h2>
-      {error && <div className="text-red-500">{error}</div>}
-      <form onSubmit={handleSubmit} className="mt-4">
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email"
-          className="block w-full p-2 mb-2 border border-gray-300"
-        />
-        <input
-          type="text"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-          placeholder="Username"
-          className="block w-full p-2 mb-2 border border-gray-300"
-        />
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Full Name"
-          className="block w-full p-2 mb-2 border border-gray-300"
-        />
-        <input
-          type="date"
-          name="dob"
-          value={formData.dob}
-          onChange={handleChange}
-          placeholder="Date of Birth"
-          className="block w-full p-2 mb-2 border border-gray-300"
-        />
-        <input
-          type="text"
-          name="phone_number"
-          value={formData.phone_number}
-          onChange={handleChange}
-          placeholder="Phone Number"
-          className="block w-full p-2 mb-2 border border-gray-300"
-        />
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder="Password"
-          className="block w-full p-2 mb-2 border border-gray-300"
-        />
-        <input
-          type="password"
-          name="password2"
-          value={formData.password2}
-          onChange={handleChange}
-          placeholder="Confirm Password"
-          className="block w-full p-2 mb-2 border border-gray-300"
-        />
-        <button type="submit" className="bg-blue-500 text-white p-2 mt-2">
-          Register
-        </button>
-      </form>
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6 col-lg-5">
+          <div className="card shadow-sm p-4">
+            <h2 className="mb-4 text-center">Create Account</h2>
+            {error && <div className="alert alert-danger">{error}</div>}
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="form-control"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  className="form-control"
+                  placeholder="Username"
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="form-control"
+                  placeholder="Full Name"
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="date"
+                  name="dob"
+                  value={formData.dob}
+                  onChange={handleChange}
+                  className="form-control"
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  name="phone_number"
+                  value={formData.phone_number}
+                  onChange={handleChange}
+                  className="form-control"
+                  placeholder="Phone Number"
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="form-control"
+                  placeholder="Password"
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="password"
+                  name="password2"
+                  value={formData.password2}
+                  onChange={handleChange}
+                  className="form-control"
+                  placeholder="Confirm Password"
+                  required
+                />
+              </div>
+              <button type="submit" className="btn btn-primary w-100">
+                Register
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

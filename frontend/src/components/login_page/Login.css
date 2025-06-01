@@ -1,0 +1,14 @@
+/* src/pages/Login.css */
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+  z-index: 2;
+}
+
+.password-toggle:hover {
+  color: #000;
+}
